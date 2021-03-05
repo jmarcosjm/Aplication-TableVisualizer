@@ -253,14 +253,14 @@ function search(data,objectField,key){
     let atribute;
     if(typeof key === "string"){
         let index;
-        key = key + " "
+        key = key;
         for(let i = 0; i<data.length; i++){
             atribute = data[i][`${objectField}`];
             index = atribute.indexOf(key);
-            if(index > -1 && (atribute.charAt(index + key.length - 1) == " " || atribute.charAt(index + key.length - 1) == "") && (atribute.charAt(index - 1) == " " || atribute.charAt(index - 1) == ""))
+            if(index > -1 && (atribute.charAt(index + key.length) == " " || atribute.charAt(index + key.length ) == "") && (atribute.charAt(index - 1) == " " || atribute.charAt(index - 1) == ""))
             {
                 newData.push(data[i]);
-            } 
+            }
         }
     }
     else{
@@ -268,7 +268,7 @@ function search(data,objectField,key){
             if(data[i][`${objectField}`] == key) newData.push(data[i]);
         }
     }
-   
+
     return newData;
 }
 
