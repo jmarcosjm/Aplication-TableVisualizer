@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tablePages.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/todos.js"></script>
+    <script src="https://kit.fontawesome.com/a7c5b994aa.js" crossorigin="anonymous"></script>
+    <title>Tabela de Afazeres</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+              <ul class="hide-on-med-and-down">
+                <li> <a href="index.html" class="home waves-effect waves-light white btn"><i class="material-icons">home</i></a></li>
+                <li> <a href="posts.html" class="waves-effect waves-light blue btn"><i class="material-icons">mode_comment</i></a></li>
+                <li> <a href="albums.html" class="waves-effect waves-light green btn"><i class="material-icons">burst_mode</i></a></li>
+                <li> <a href="todos.html" class="waves-effect waves-light red darken-3 btn"><i class="material-icons">beenhere</i></a></li>
+              </ul>
+            </div>
+          </nav>
+          
+            <div id="sideBar">
+                <a href="index.html" class="mOption home waves-effect waves-light white btn"><i class="material-icons">home</i></a>
+                <a href="posts.html" class="mOption waves-effect waves-light blue btn">Postagens</a>
+                <br>
+                <a href="albums.html" class="mOption waves-effect waves-light green btn">Albuns</a>
+                <br>
+                <a href="todos.html" class="mOption waves-effect waves-light red darken-3 btn">Afazeres</a>  
+            </div>
+            <a href="#" id="mMenu-toggle"><i class="material-icons">arrow_forward</i></a>
+        
+    </header>
+ 
+
+    <main class="container">
+        <div id="menu" class="show">
+            <div class="row">
+                <h4> <span>Afazeres</span> </h4>
+                <div class="box"> 
+                  <div id="screen" >
+                    <a href="#" id="filterActivator" class="waves-effect waves-light btn"><i class="material-icons right">filter_list</i>Filtros</a>
+                    <p class="instruction">Clique em uma fileira para exibi-la isoladamente</p>
+                      <table class="highlight">
+                      <thead>
+                      <tr>
+                        <th>Id do Usuário</th>
+                        <th>Id da Tarefa</th>
+                        <th>Título</th>
+                        <th>Situação</th>
+                      </tr>
+                      </thead>
+                      <tbody id = "tBody"></tbody>
+                      </table>
+                      <div id="modalCase"></div>
+                      <div class="cardCase"></div>
+                  </div>
+                  <label class="LEPP">Elementos por pagina:</label>
+                  <div class="input-field EPP">
+                      <select>
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      <ul class="pagination">
+                      </ul>
+                  </div>
+                  <div id="modalFilter" class="modal">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+                    <div class="modal-content">
+                        <div class="headModal"><p>Pesquisar por:</p></div>
+                            <div class="input-field spaceBtFields">
+                                <select>
+                                    <option selected>Nenhum</option>
+                                    <option>Id do Usuário</option>
+                                    <option>Id da Tarefa</option>
+                                    <option>Título</option>
+                                    <option>Situação</option>
+                                </select>
+                            </div>
+                            <div class="headModal"><p>Chave de pesquisa:</p></div>
+                            <div class="input-field">
+                                <input placeholder='ID Ex: "15", Title Ex: "sunt aut"' id="key" type="text" class="validate">
+                                <div class="switch taskSearch">
+                                    <label>
+                                      Pendente
+                                      <input class="taskValue" type="checkbox">
+                                      <span class="lever"></span>
+                                      Concluido
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="headModal spaceBtFields"><p>Ordenação por ID:</p></div>
+                            <div class="input-field">
+                                <div class="switch">
+                                    <label>
+                                      Crescente
+                                      <input class="sortType" type="checkbox">
+                                      <span class="lever"></span>
+                                      Decrescente
+                                    </label>
+                                </div>
+                            </div>
+                            <a href="#" id="filterSend" class="waves-effect waves-light btn"><i class="material-icons right">filter_list</i>Filtrar</a>
+                    </div> 
+                </div>
+                <div id="blankArea"></div>
+              </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
